@@ -1,0 +1,117 @@
+
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+body {
+    position: relative;
+    font-family: 'Comfortaa', cursive;
+    padding: 20px;
+}
+
+/* ================================= 
+  Modal & Overlay
+==================================== */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4)
+}
+
+.modal {
+    width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================================= 
+  Body
+==================================== */
+
+header h1 {
+    margin-bottom: 40px;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.name {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+.email,
+.address,
+.number,
+.address,
+.birthday {
+    color: rgb(121, 116, 116);
+}
+
+.email,
+.address {
+    margin: 10px;
+}
+
+.grid-container{
+    display: block;
+}
+
+.avatar {
+    float: left;
+    padding-top: 8px;
+
+}
+
+.text-container {
+    padding-left: 150px;
+}
+
+.card {
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 2em;
+    width: 425px;
+    height: 140px;
+}
+
+/* ================================= 
+  Grid Container
+==================================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 20px;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . ."
+      ". . .";
+  }
