@@ -6,7 +6,6 @@
 body {
     position: relative;
     font-family: 'Comfortaa', cursive;
-    padding: 20px;
 }
 
 /* ================================= 
@@ -49,7 +48,9 @@ body {
 ==================================== */
 
 header h1 {
+    margin-top: 50px;
     margin-bottom: 40px;
+    margin-left: 40px;
 }
 
 .avatar {
@@ -57,8 +58,9 @@ header h1 {
 }
 
 .name {
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 10px;
+    margin-top: 25px;
 }
 
 
@@ -76,7 +78,10 @@ header h1 {
 }
 
 .grid-container{
-    display: block;
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-left: 40px;
 }
 
 .avatar {
@@ -96,13 +101,32 @@ header h1 {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 2em;
-    width: 425px;
+    width: 420px;
     height: 140px;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition:.3s all;
+}
+
+     
+.grid-container:hover .card{
+    filter:blur(3px);
+    opacity:.5;
+    transform: scale(.98);
+    box-shadow:none;
+}
+
+.grid-container:hover .card:hover{
+    transform:scale(1);
+    filter:blur(0px);
+    opacity:1;
+    box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
 }
 
 /* ================================= 
   Grid Container
 ==================================== */
+
 
 .grid-container {
     display: grid;
@@ -114,4 +138,11 @@ header h1 {
       ". . ."
       ". . ."
       ". . .";
-  }
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
