@@ -52,20 +52,30 @@ function displayEmployees(employeeData) {
  });
     gridContainer.innerHTML = employeeHTML;
 
-    const charactersList = document.getElementById('charactersList');
-    const searchBar = document.getElementById('search');
-    let characters = [];
+    // Search & filter names
 
-    console.log(searchBar);
+    //Declare variables that will get the names
+    const search = document.getElementById('search');
+    const names = document.querySelectorAll('.text-container h2');
 
+    function sortSearch() {
 
-    searchBar.addEventListener('keyup', (e) => {
-        const searchString = e.target.value;
-        const filteredCharacters = employees.filter( character => {
-            return character.name.includes(searchString);
+        const searchName = search.value.toLowerCase();
+
+        names.forEach(name => {
+
+            const cardPersonName = name.textContent.toLowerCase();
+            const cardPerson = name.parentElement.parentElement;
+
+            if(cardPersonName.indexOf(searchName) > -1) {
+                cardPerson.style.display = 'flex';
+            } else {
+                cardPerson.style.display = 'none';
+            }
         });
-});
+    };
 
+    search.addEventListener('keyup', sortSearch);
 }    
 
 
@@ -91,11 +101,14 @@ function displayModal(index) {
         <p class="address">${street}, ${state} ${postcode}</p>
         <p>Birthday:
         ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+        <button class="prev" data-id="">Previous</button>
+        <button class="next" data-id="">Next</button>
     </div>
     `;
 
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+    
 }
 
 
@@ -118,25 +131,6 @@ gridContainer.addEventListener('click', e => {
 });
 
 
-// filter the directory
-
-// function searchEmployees() {
-
-//     var input, filter, ul, li, a, i, txtValue;
-//     input = document.getElementById("search");
-//     filter = input.value.toUpperCase();
-//     ul = document.getElementsByClassName("grid-container");
-//     li = ul.getElementsByClassName("card");
-//     for (i = 0; i < li.length; i++) {
-//         a = li[i].getElementsByClassName("name")[0];
-//         txtValue = a.textContent || a.innerText;
-//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//             li[i].style.display = "";
-//         } else {
-//             li[i].style.display = "none";
-//         }
-//     }
-// }
 
 
 
