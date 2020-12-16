@@ -51,7 +51,24 @@ function displayEmployees(employeeData) {
   `
  });
     gridContainer.innerHTML = employeeHTML;
+
+    const charactersList = document.getElementById('charactersList');
+    const searchBar = document.getElementById('search');
+    let characters = [];
+
+    console.log(searchBar);
+
+
+    searchBar.addEventListener('keyup', (e) => {
+        const searchString = e.target.value;
+        const filteredCharacters = employees.filter( character => {
+            return character.name.includes(searchString);
+        });
+});
+
 }    
+
+
 
 
 function displayModal(index) {
@@ -99,3 +116,29 @@ gridContainer.addEventListener('click', e => {
     modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+
+// filter the directory
+
+// function searchEmployees() {
+
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementById("search");
+//     filter = input.value.toUpperCase();
+//     ul = document.getElementsByClassName("grid-container");
+//     li = ul.getElementsByClassName("card");
+//     for (i = 0; i < li.length; i++) {
+//         a = li[i].getElementsByClassName("name")[0];
+//         txtValue = a.textContent || a.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else {
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
+
+
+
+
+
