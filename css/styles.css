@@ -151,6 +151,7 @@ header h1 {
 
 .modal {
     width: 400px;
+    height: 470px;
     margin: 15% auto auto;
     position: relative;
     text-align: center;
@@ -164,6 +165,14 @@ header h1 {
 
 .modal-content .text-container{
     text-align: center;
+    font-size: 14px;
+}
+
+
+#email1, 
+#address1, 
+#address2 {
+    font-size: 14px;
 }
 
 .modal-content .avatar {
@@ -173,7 +182,6 @@ header h1 {
 hr {
     margin: 20px;
 }
-
 
 .modal-close {
     position: absolute;
@@ -186,7 +194,41 @@ hr {
     display: none;
 }
 
+/* buttons */
 
+.example_c {
+    color: white !important;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #777;
+    padding: 10px;
+    border: 2px solid #777 !important;
+    display: inline;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+}
+
+.example_c:hover {
+    color: #ffffff !important;
+    background: black;
+    border-color: black !important;
+    transition: all 0.4s ease 0s;
+}
+
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+}
+
+#left,
+#right {
+    margin-top: 15px;
+}
 
 /* ================================= 
   Grid Container

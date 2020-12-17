@@ -94,15 +94,16 @@ function displayModal(index) {
     <img class="avatar" src="${picture.large}" />
     <div class="text-container">
         <h2 class="name">${name.first} ${name.last}</h2>
-        <p class="email">${email}</p>
-        <p class="address">${city}</p>
+        <p class="email" id="email1">${email}</p>
+        <p class="address" id="address1">${city}</p>
         <hr />
         <p>${phone}</p>
-        <p class="address">${street}, ${state} ${postcode}</p>
+        <p class="address1" id="address2">${street.number} ${street.name}, ${state} ${postcode}</p>
         <p>Birthday:
         ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-        <button class="btn decrease" data-id="">Previous</button>
-        <button class="btn increase" data-id="">Next</button>
+        <div class="btn decrease" id="left"><a class="example_c">Previous</a></div>
+        <div class="btn increase" id="right"><a class="example_c">next</a></div>
+        
     `;
 
     overlay.classList.remove("hidden");
@@ -110,25 +111,30 @@ function displayModal(index) {
 
 
     // select value and buttons
-    const value = document.querySelector('#value');
     const btns = document.querySelectorAll('.btn');
-
+    
     btns.forEach(function (btn) {
-    btn.addEventListener('click', function(e){
+      btn.addEventListener('click', function (e) {
         const styles = e.currentTarget.classList;
-        if(styles.contains('decrease')){
+        if (styles.contains('decrease')) {
+          if (index > 0) {
             index--;
             displayModal(index);
-        } else if(styles.contains('increase')){
+          } else {
+            index = employees.length - 1;
+            displayModal(index);
+          }
+        } else if (styles.contains('increase')) {
+          if (index < employees.length - 1) {
             index++;
             displayModal(index);
-        } 
-        value.textContent = index;
-    })
-});
-    
-    
-    
+          } else {
+            index = 0;
+            displayModal(index);
+          }
+        }
+      });
+     
 }
 
 
