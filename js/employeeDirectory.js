@@ -101,13 +101,33 @@ function displayModal(index) {
         <p class="address">${street}, ${state} ${postcode}</p>
         <p>Birthday:
         ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-        <button class="prev" data-id="">Previous</button>
-        <button class="next" data-id="">Next</button>
-    </div>
+        <button class="btn decrease" data-id="">Previous</button>
+        <button class="btn increase" data-id="">Next</button>
     `;
 
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+
+
+    // select value and buttons
+    const value = document.querySelector('#value');
+    const btns = document.querySelectorAll('.btn');
+
+    btns.forEach(function (btn) {
+    btn.addEventListener('click', function(e){
+        const styles = e.currentTarget.classList;
+        if(styles.contains('decrease')){
+            index--;
+            displayModal(index);
+        } else if(styles.contains('increase')){
+            index++;
+            displayModal(index);
+        } 
+        value.textContent = index;
+    })
+});
+    
+    
     
 }
 
