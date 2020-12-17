@@ -230,26 +230,5 @@ hr {
     margin-top: 15px;
 }
 
-/* ================================= 
-  Grid Container
-==================================== */
-
-
-/* .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 20px;
-    grid-template-areas:
-      ". . ."
-      ". . ."
-      ". . ."
-      ". . .";
-} */
-
-
-/* ================================= 
-  Media Queries
-==================================== */
 
 
